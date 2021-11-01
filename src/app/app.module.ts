@@ -13,6 +13,7 @@ import { TwowaybindingComponent } from './components/twowaybinding/twowaybinding
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { ListProducts2Component } from './components/list-products2/list-products2.component';
 
 
 
@@ -26,7 +27,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     TwowaybindingComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    ListProducts2Component
 
   ],
   imports: [
