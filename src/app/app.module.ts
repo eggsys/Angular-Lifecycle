@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { OnewaybindingComponent } from './components/onewaybinding/onewaybinding.component';
 import { TwowaybindingComponent } from './components/twowaybinding/twowaybinding.component'
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 
 
@@ -20,7 +23,11 @@ import { TwowaybindingComponent } from './components/twowaybinding/twowaybinding
     ChildComponent,
     ListProductsComponent,
     OnewaybindingComponent,
-    TwowaybindingComponent
+    TwowaybindingComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidebarComponent
+
   ],
   imports: [
     BrowserModule,
