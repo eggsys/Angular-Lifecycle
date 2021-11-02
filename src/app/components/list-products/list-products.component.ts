@@ -9,17 +9,25 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ListProductsComponent implements OnInit {
 
-  listproduct : any
-  test_product :string = "PASS DATA from list-products ---> @input list-product2"
-  createAt : any
+  listproduct: any
+  ProductData: any
+  test_product: string = "PASS DATA from list-products ---> @input list-product2"
+  createAt: any
   constructor(private ProductService: ProductService) { }
 
   ngOnInit(): void {
-    this.ProductService.ListProduct().subscribe(data =>{
-      this.listproduct = data     
-      
-    })  
-    
+    this.ProductService.ListProduct().subscribe(data => {
+      this.listproduct = data
+
+    })
+
+  }
+
+  getAllProduct() {
+    this.ProductService.ListProduct()
+      .subscribe(res => {
+        this.ProductData = res;
+      })
   }
 
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormModel } from './form.model';
+import { CrudService } from '../../api/crud.service'
 
 @Component({
   selector: 'app-form',
@@ -8,24 +10,40 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class FormComponent implements OnInit {
 
-  insertForm : FormGroup
-  constructor(private formbuilder:FormBuilder) { 
+  insertForm: FormGroup
+  productModelObj: FormModel = new FormModel()
+
+  constructor(private formbuilder: FormBuilder, private api: CrudService) {
     this.insertForm = this.formbuilder.group({
       title: formbuilder.control('', [Validators.required]),
       price: formbuilder.control('', [Validators.min(0)]),
-      quantity: formbuilder.control('' , [Validators.min(0)]),
+      quantity: formbuilder.control('', [Validators.min(0)]),
 
-      
+
     })
 
   }
 
-  public onSubmit(){
+  public onSubmit() {
     console.log(this.insertForm.value)
-  } 
+  }
 
-  public control(name:string){
+  public control(name: string) {
     return this.insertForm.get(name)
+  }
+
+  postProductDetail() {
+    this.productModelObj.ProductTitle = this.insertForm.value.title
+    this.productModelObj.ProductPrice = this.insertForm.value.price
+    this.productModelObj.ProductQuantity = this.insertForm.value.quantity
+    this.api.postProduct(this.productModelObj)
+      .subscribe(res => {
+        console.log(res);
+        alert("Product Add !")
+      },
+        err => {
+          alert("Something went wrong" + err)
+        })
   }
 
   ngOnInit(): void {
