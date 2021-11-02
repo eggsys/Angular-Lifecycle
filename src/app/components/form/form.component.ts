@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
   insertForm: FormGroup
   productModelObj: FormModel = new FormModel()
 
-  constructor(private formbuilder: FormBuilder, private api: CrudService) {
+  constructor(public formbuilder: FormBuilder, private api: CrudService) {
     this.insertForm = this.formbuilder.group({
       title: formbuilder.control('', [Validators.required]),
       price: formbuilder.control('', [Validators.min(0)]),
@@ -40,6 +40,7 @@ export class FormComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         alert("Product Add !")
+        this.insertForm.reset()
       },
         err => {
           alert("Something went wrong" + err)

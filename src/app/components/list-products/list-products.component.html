@@ -1,9 +1,9 @@
 <p>list-products works!</p>
 <ul>
     <li *ngFor="let product of listproduct">
-        Title : {{product.ProductTitle}} Price : {{product.ProductPrice}} Quantity : {{product.ProductQuantity}}
-        <button>Edit</button>
-        <button>Delete</button>
+        Title : {{product.ProductTitle}} Price : {{product.ProductPrice}} Quantity : {{product.ProductQuantity}} ProductId : {{product.ProductId}}
+        <button (click)="UpdateProduct(product)">Edit</button>
+        <button (click)="deleteProduct(product)">Delete</button>
         <app-list-products2 [createAt]="test_product"></app-list-products2>
     </li>
 </ul>
