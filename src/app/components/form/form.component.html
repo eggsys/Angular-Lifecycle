@@ -1,0 +1,38 @@
+<div class="content">
+    <h1> Reactive Form </h1>
+    <form [formGroup]="insertForm" (ngSubmit)="onSubmit()">
+        <div class="form-container">
+            <div>
+                Title
+                <input class="form-field" formControlName="title">
+                <div *ngIf="control('title')?.errors?.required" class="error">
+                    Title is required
+                </div>
+            </div>
+
+            <div>
+                Price <input type="number" class="form-field" formControlName="price">
+                <div *ngIf="control('price')?.errors?.min" class="error">
+                    Title is required
+                </div>
+            </div>
+
+
+            <div>
+                Quantity <input type="number" class="form-field" formControlName="quantity">
+                <div *ngIf="control('quantity')?.errors?.min" class="error">
+                    Title is required
+                </div>
+            </div>
+
+
+
+            <div>
+                <button class="button" type="submit" [disabled]="insertForm.invalid"> 
+                    Add
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>

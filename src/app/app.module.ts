@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListProductsComponent } from './components/list-products/list-products.component';
 import { OnewaybindingComponent } from './components/onewaybinding/onewaybinding.component';
@@ -14,6 +14,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ListProducts2Component } from './components/list-products2/list-products2.component';
+import { FormComponent } from './components/form/form.component';
 
 
 
@@ -28,14 +29,17 @@ import { ListProducts2Component } from './components/list-products2/list-product
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    ListProducts2Component
+    ListProducts2Component,
+    FormComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
