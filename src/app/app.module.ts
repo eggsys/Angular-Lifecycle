@@ -15,6 +15,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { ListProducts2Component } from './components/list-products2/list-products2.component';
 import { FormComponent } from './components/form/form.component';
+import { FormUpdateComponent } from './components/form-update/form-update.component';
 
 
 
@@ -30,7 +31,8 @@ import { FormComponent } from './components/form/form.component';
     FooterComponent,
     SidebarComponent,
     ListProducts2Component,
-    FormComponent
+    FormComponent,
+    FormUpdateComponent
 
   ],
   imports: [

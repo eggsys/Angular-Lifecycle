@@ -44,7 +44,7 @@ export class ListProductsComponent implements OnInit {
 
   deleteProduct(product: any) {
     console.log("call : DELETE")
-    this.ProductService.DeleteProduct(product.ProductTitle)
+    this.ProductService.DeleteProduct(product._id)
       .subscribe(res => {
         alert("Product Delete" + res);
         this.getAllProduct();

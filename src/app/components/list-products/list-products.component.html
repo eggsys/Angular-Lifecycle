@@ -2,7 +2,9 @@
 <ul>
     <li *ngFor="let product of listproduct">
         Title : {{product.ProductTitle}} Price : {{product.ProductPrice}} Quantity : {{product.ProductQuantity}} ProductId : {{product.ProductId}}
+
         <button (click)="UpdateProduct(product)">Edit</button>
+        <a routerLink="update/{{product.ProductId}}">Edit V2</a>
         <button (click)="deleteProduct(product)">Delete</button>
         <app-list-products2 [createAt]="test_product"></app-list-products2>
     </li>
